@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | 3-column preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bright-orange: hsl(31, 77%, 52%);
+            --dark-cyan: hsl(184, 100%, 22%);
+            --very-dark-cyan: hsl(179, 100%, 13%);
+            --transparent-white: hsla(0, 0%, 100%, 0.75);
+            --very-light-gray: hsl(0, 0%, 95%);
+            --font-title: "Big Shoulders Display", sans-serif;
+            font-size: 10px;
+            font-family: "Lexend Deca", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+
+        body {
+            background: var(--very-light-gray);
+            font-family: "Lexend Deca", sans-serif;
+            font-size: 1.4rem;
+            display: grid;
+            color: #ffffff;
+        }
+
+        main {
+            display: grid;
+            /*grid-template-columns: minmax(0, 1fr);*/
+            border-radius: 2rem;
+            padding: 4rem 2rem;
+        }
+
+        main article > h1 {
+            font-family: var(--font-title);
+            text-transform: uppercase;
+        }
+
+        main p {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--transparent-white);
+        }
+
+        article {
+            display: grid;
+            gap: 2rem;
+            padding: 3rem;
+        }
+
+        article {
+            display: grid;
+            gap: 2rem;
+            padding: 3rem;
+            border: none;
+            outline: none;
+        }
+
+
+
+        article:first-child {
+            border-radius: 2rem 2rem 0 0;
+        }
+
+        article:last-child {
+            border-radius: 0 0 2rem 2rem;
+        }
+
+        button {
+            width: 40%;
+            margin-top: 5rem;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            border: .1rem solid transparent;
+            outline: none;
+        }
+
+        button:hover {
+            background: none;
+            color: #ffffff !important;
+            border: .1rem solid white;
+            cursor: pointer;
+        }
+
+        article:nth-child(1) button {
+                color: var(--bright-orange);
+        }
+
+        article:nth-child(2) button {
+            color: var(--dark-cyan);
+        }
+
+        article:nth-child(3) button {
+            color: var(--very-dark-cyan);
+        }
+
+        .sedan {
+            background: var(--bright-orange);
+        }
+
+        .suv {
+            background: var(--dark-cyan);
+        }
+
+        .luxury {
+            background: var(--very-dark-cyan);
+        }
+
+        @media (min-width: 76rem) {
+            body {
+                place-items: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            main {
+                grid-template-columns: repeat(3, 1fr);
+                width: 60%;
+                padding: 4rem 17rem;
+            }
+
+            article:first-child {
+                border-radius: 2rem 0 0 2rem;
+            }
+
+            article:last-child {
+                border-radius: 0 2rem 2rem 0;
+            }
+
+            button {
+                width: 80%;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+<main>
+    <article class="sedan">
+        <img src="./images/icon-sedans.svg" alt="">
+        <h1>
+            Sedans
+        </h1>
+        <p>
+            Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city
+            or on your next road trip.
+        </p>
+        <button>
+            Learn more
+        </button>
+    </article>
+    <article class="suv">
+        <img src="./images/icon-suvs.svg" alt="">
+        <h1>
+            SUVs
+        </h1>
+        <p>
+            Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation
+            and off-road adventures.
+        </p>
+        <button>
+            Learn more
+        </button>
+    </article>
+    <article class="luxury">
+        <img src="./images/icon-luxury.svg" alt="">
+        <h1>
+            Luxury
+        </h1>
+        <p>
+            Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury
+            rental and arrive in style.
+        </p>
+        <button>
+            Learn more
+        </button>
+    </article>
+</main>
+</body>
+</html>
