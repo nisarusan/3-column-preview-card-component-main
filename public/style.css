@@ -1,158 +1,184 @@
- @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
-        :root {
-            font-size: 10px;
-        }
+:root {
+    font-size: 10px;
+}
 
-        body {
-            font-family: "Lexend Deca", sans-serif;
-            font-size: 1.4rem;
-            margin: 0 auto;
-        }
+body {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1.4rem;
+    margin: 0 auto;
+}
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-            padding: 1rem 0;
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+}
 
-        header .logo-img > img {
-            width: 60%;
-        }
+header .logo-img > img {
+    width: 60%;
+}
 
-        header nav ul {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+header nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
 
-        header, main {
-            margin: 0 auto;
-            max-width: 128rem;
-        }
+header, main {
+    margin: 0 auto;
+    max-width: 128rem;
+}
 
-        /*Temporary hidden*/
-        nav {
-            display: none;
-        }
+/*Temporary hidden*/
+nav {
+    display: none;
+}
 
-        .sidebar {
-            display: none;
-            width: calc(100% / 12 * 2 - 10px);
-        }
+.sidebar {
+    display: none;
+    width: calc(100% / 12 * 2 - 10px);
+}
 
-        .sidebar img {
-            width: 100%;
-        }
+.sidebar img {
+    width: 100%;
+}
 
-        main {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            padding-top: 4rem;
-        }
+main {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4rem;
+}
 
-        .main-wrapper {
-            background: aliceblue;
-        }
+.main-wrapper {
+    background: aliceblue;
+}
 
-        .homepage {
-            display: grid;
-            /*grid-template-columns: repeat(8, 1fr);*/
-            /*grid-template-rows: repeat(6, 1fr);*/
-            grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); /* Auto-fit columns with a minimum width of 100px */
-            /*grid-auto-rows: 10rem;*/
-            gap: 1rem;
-            width: 100%;
-            padding: 2rem;
-        }
+button {
+    cursor: pointer;
+}
+
+.homepage {
+    display: grid;
+    /*grid-template-columns: repeat(8, 1fr);*/
+    /*grid-template-rows: repeat(6, 1fr);*/
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); /* Auto-fit columns with a minimum width of 100px */
+    /*grid-auto-rows: 10rem;*/
+    gap: 1rem;
+    width: 100%;
+    padding: 2rem;
+}
 
 
-        .homepage article img {
-            width: 100%;
-            border-radius: .5rem;
-            outline: none;
-            border: 0;
-        }
+.homepage article img {
+    width: 100%;
+    transition: all .2s ease-in-out;
+    border-radius: .5rem;
+    outline: none;
+    border: 0;
+}
 
-        article:hover {
-            opacity: 0.5;
-            cursor: pointer;
-        }
+.homepage article img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transform: scale(1.08);
+}
 
-        .play-radio {
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            background: black;
-            /*opacity: 0.8;*/
-            min-height: 2rem;
-            color: #ffffff;
-        }
 
-        .play-radio-img {
-            max-width: 100%;
-        }
 
-        .play-radio-img img {
-            width: 10%;
-        }
+.play-radio {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: black;
+    /*opacity: 0.8;*/
+    min-height: 2rem;
+    color: #ffffff;
+}
 
-        .play-radio button {
-            height: 5rem;
-            width: 5rem;
-            outline: none;
-            border: none;
-            border-radius: 100%;
-            background: linear-gradient(122deg, #3c9cdc, #37b376 38%, #46C31D 67%, #facf18);
-            color: #ffffff;
-            font-weight: bold;
-        }
+.play-radio-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 128rem;
+}
 
-        .play-radio .play-radio-description {
-            flex-grow: 1;
-        }
+.play-radio-img {
+    /*width: 100%;*/
+    /*bottom: 0;*/
+    /*max-width: 100%;*/
+}
 
-        .play-radio .play-radio--buttons {
-            flex-grow: 1;
-        }
+.play-radio-img img {
+    width: 10%;
+}
 
-        .play-radio .play-radio--buttons svg, .play-radio--stop svg {
-            fill: #ffffff;
-        }
+.play-radio button {
+    height: 5rem;
+    width: 5rem;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    background: linear-gradient(122deg, #3c9cdc, #37b376 38%, #46C31D 67%, #facf18);
+    color: #ffffff;
+    font-weight: bold;
+}
 
-        @media (min-width: 76rem) {
-            .sidebar {
-                display: block;
-            }
+.play-radio-wrapper .play-radio-description {
+    flex-grow: 1;
+}
 
-            .homepage {
-                grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); /* Auto-fit columns with a minimum width of 100px */
-            }
+.play-radio-wrapper .play-radio--buttons {
+    flex-grow: 0;
+}
 
-            header, main {
-                padding: 0 2rem;
-            }
+.play-radio .play-radio--buttons svg, .play-radio--stop svg {
+    fill: #ffffff;
+}
 
-            nav {
-                display: block;
-            }
-        }
+.play-radio--stop {
+    display: none;
+}
 
-        @media print {
-            .homepage {
-                break-inside: avoid; /* Prevent grid items from breaking across pages */
-            }
-        }
+
+.play-radio--button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media (min-width: 76rem) {
+    .sidebar {
+        display: block;
+    }
+
+    .homepage {
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); /* Auto-fit columns with a minimum width of 100px */
+    }
+
+    /*header, main {*/
+    /*    padding: 0 2rem;*/
+    /*}*/
+    nav {
+        display: block;
+    }
+}
+
+@media print {
+    .homepage {
+        break-inside: avoid; /* Prevent grid items from breaking across pages */
+    }
+}

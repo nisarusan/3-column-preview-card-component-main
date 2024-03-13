@@ -5,16 +5,17 @@ const radio = {
             "img_url": "./images/radio-npo-1-radio-luisteren-online.webp",
             "slug": "npo-1-radio",
             "stream_url": "https://icecast.omroep.nl//radio1-bb-mp3",
-            "playlist_url": "https://icecast.omroep.nl/radio4-eigentijdsfb-mp3.xspf"
+            "playlist_url": "https://icecast.omroep.nl/radio4-eigentijdsfb-mp3.xspf",
+            "description": "NPO 2 is een super groot radio station met alles erop aan"
         },
         {
             "name": "NPO 2",
             "img_url": "./images/radio-npo-1-radio-luisteren-online.webp",
             "slug": "npo-2-radio",
             "stream_url": "https://icecast.omroep.nl:80/radio4-eigentijdsfb-mp3",
-            "playlist_url": "https://icecast.omroep.nl/radio4-eigentijdsfb-mp3.xspf"
+            "playlist_url": "https://icecast.omroep.nl/radio4-eigentijdsfb-mp3.xspf",
+            "description": "NPO 2 is een super groot radio station met alles erop aan"
         }
-        // Add more radio station objects as needed
     ]
 };
 document.addEventListener("DOMContentLoaded", function() {
@@ -24,17 +25,35 @@ document.addEventListener("DOMContentLoaded", function() {
     const radioNameElement = document.getElementById("radioName");
     const currentTrackElement = document.getElementById("currentTrack");
 
+    //play button & stop
+    const playButton = document.querySelector('.play-radio--button')
+    const stopButton = document.querySelector('.play-radio--stop');
 
+    playButton.addEventListener('click', () => {
+        audioPlayer.play();
+        playButton.style.display = 'none';
+        stopButton.style.display = 'inline-block';
+    });
+
+    stopButton.addEventListener('click', () => {
+        audioPlayer.pause();
+        stopButton.style.display = 'none';
+        playButton.style.display = 'inline-block';
+    });
     function handleRouting() {
         const path = window.location.pathname.substring(1); // Get the path from the URL
         const station = radio.radioStations.find(station => station.slug === path); // Find the station object based on the path
         if (station) {
             audioPlayer.src = station.stream_url;
-            audioPlayer.play();
+            audioPlayer.play(); // Ensure audio starts playing for the new station
+            playButton.style.display = audioPlayer.paused ? 'inline-block' : 'none';
+            stopButton.style.display = audioPlayer.paused ? 'none' : 'inline-block';
         } else {
             console.log("Invalid or unknown station path:", path);
         }
     }
+
+    handleRouting();
     function fetchAndDisplayPlaylist(playlistUrl, station) {
         fetch(playlistUrl)
             .then(response => response.text())
@@ -88,7 +107,6 @@ document.addEventListener("DOMContentLoaded", function() {
         radioContainer.insertAdjacentHTML("beforeend", stationHTML);
     });
 
-    handleRouting();
 
     window.addEventListener("popstate", handleRouting);
 
